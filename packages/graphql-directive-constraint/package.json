@@ -1,0 +1,18 @@
+{
+  "name": "@ruzz/graphql-directive-constraint",
+  "version": "1.0.0",
+  "description": "Graphql constraint directive for fields validation",
+  "author": "Roberto Ruzzini",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "graphql-tools": "^4.0.7",
+    "validator": "^13.0.0"
+  },
+  "peerDependencies": {
+    "graphql": "^0.13.0 || ^14.0.0"
+  },
+  "license": "MIT"
+}

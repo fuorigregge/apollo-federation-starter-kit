@@ -1,0 +1,10 @@
+{
+  "name": "@ruzz/service-logger",
+  "description": "Apollo federation starter-kit internal logger",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "winston": "^3.2.1"
+  }
+}

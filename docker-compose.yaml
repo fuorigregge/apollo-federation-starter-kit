@@ -1,0 +1,61 @@
+version: "3.2"
+services:
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: ./Dockerfile
+    links:
+      - user-service:user-service      
+      - resource-service:resource-service            
+    volumes:
+      - ./gateway:/app
+      - /app/node_modules
+      - ./assets:/app/assets
+    depends_on: 
+      - mongodb
+      - resource-service
+      - user-service      
+    ports:
+      - "5000:5000"
+      - "9229:9229"
+
+  user-service:
+    build:
+      context: ./user-service
+      dockerfile: ./Dockerfile
+    links:
+      - mongodb:mongodb
+    depends_on: 
+      - mongodb
+    volumes:
+      - ./user-service:/app
+      - /app/node_modules
+      - ./assets:/app/assets
+    ports:
+      - "5001:5001"
+      - "9230:9230"
+
+  resource-service:
+    build:
+      context: ./resource-service
+      dockerfile: ./Dockerfile
+    links:
+      - mongodb:mongodb
+    volumes:
+      - ./resource-service:/app
+      - /app/node_modules
+      - ./assets:/app/assets
+    depends_on: 
+      - mongodb
+    ports:
+      - "5002:5002"
+      - "9231:9231"
+
+  mongodb:
+    build:
+      context: ./mongo
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./mongo/data:/data/db
+    ports:
+      - 27030:27017

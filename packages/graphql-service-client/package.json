@@ -1,0 +1,11 @@
+{
+  "name": "@ruzz/graphql-service-client",
+  "description": "Apollo federation starter-kit internal graphql client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Roberto Ruzzini",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}

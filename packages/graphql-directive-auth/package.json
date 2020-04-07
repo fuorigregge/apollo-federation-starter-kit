@@ -1,0 +1,17 @@
+{
+  "name": "@ruzz/graphql-directive-auth",
+  "author": "Roberto Ruzzini",
+  "description": "Graphql authorization directive",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "graphql-tools": "^4.0.7"    
+  },
+  "peerDependencies": {
+    "graphql": "^0.13.0 || ^14.0.0"
+  },
+  "license": "MIT"
+}

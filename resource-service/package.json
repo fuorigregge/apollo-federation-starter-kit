@@ -1,0 +1,26 @@
+{
+  "name": "resource-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --inspect=0.0.0.0:9231 -r dotenv/config ./src/index.js dotenv_config_path=../assets/.env",
+    "docker": "nodemon --inspect=0.0.0.0:9231 -r dotenv/config ./src/index.js dotenv_config_path=/app/assets/.env.docker",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },  
+  "dependencies": {
+    "@apollo/federation": "^0.13.2",    
+    "@ruzz/graphql-directive-auth": "^1.0.0",
+    "@ruzz/graphql-directive-constraint": "^1.0.0",
+    "@ruzz/service-logger": "^1.0.0",
+    "@ruzz/service-utils": "^1.0.0",
+    "@ruzz/graphql-service-client": "^1.0.0",
+    "apollo-server": "^2.11.0",
+    "awilix": "^4.2.5",
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.9.6"
+  },
+  "engines": {
+    "node": ">= 12.x"
+  }
+}

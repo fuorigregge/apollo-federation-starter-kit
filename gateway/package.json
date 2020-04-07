@@ -1,0 +1,20 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "nodemon --inspect=0.0.0.0:9229 -r dotenv/config ./src/index.js dotenv_config_path=../assets/.env",
+    "docker": "nodemon --inspect=0.0.0.0:9229 -r dotenv/config ./src/index.js dotenv_config_path=/app/assets/.env.docker",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/gateway": "^0.13.2",
+    "@ruzz/service-logger": "^1.0.0",
+    "@ruzz/service-utils": "^1.0.0",
+    "apollo-server": "^2.11.0",
+    "dotenv": "^8.2.0",
+    "graphql": "^14.6.0",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
