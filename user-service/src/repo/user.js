@@ -76,7 +76,7 @@ const userRepo = ({ userModel }) => {
         user.auth.lock_until = null;
         user.save();
 
-        if (!user.auth.verified && !serviceSettings.debug) {
+        if (!user.auth.verified) {
             throw new Error('login_auth_verify_account');
         }
 
