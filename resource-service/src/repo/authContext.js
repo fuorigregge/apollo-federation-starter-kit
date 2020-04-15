@@ -18,7 +18,7 @@ const authContext = ({ reqHeaders, serviceClient }) => {
             .withUser(authToken())
             .process(`query { me {id hasRole(role: ${role})} }`)        
 
-        if (errors) return null;
+        if (errors || !data.me) return null;
         return data.me.hasRole;
     }
 
